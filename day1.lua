@@ -3,7 +3,6 @@ io.input(file)
 
 max = {0, 0, 0}
 i = 0
-
 while true do
     local line = io.read("*line")
     if line == nil then break end
@@ -21,13 +20,13 @@ while true do
     end
 end
 
---answer for part 1
+--part 1
 print(max[1])
 
---answer for part 2
+--part 2 
 sum = 0
 for k=1, #max do
     sum = sum + max[k]
 end
 print(sum)
-
+--answer is 195292
