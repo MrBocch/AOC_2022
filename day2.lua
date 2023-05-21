@@ -94,9 +94,11 @@ print(points)
 while true do
     local line = io.read("*line")
     if line == nil then break end
+    
     left = string.sub(line, 1,1)
     right = string.sub(line, 3,3)
 
+    --maybe could use hashmap to make quicker + using elseif's/else
     --lose
     if right == "X" then
         if p1.rock == left then
