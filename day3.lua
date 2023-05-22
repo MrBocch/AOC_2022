@@ -73,23 +73,16 @@ function part2()
                     end
                 end
 
-                break 
                 --will not work without this break 
+                break --the letter could show up multiple times so you need to break out
             end
         end
 
 
-    end --endwhile
+    end 
 
     print("Part 2: "..sum)
 end
 
 part1()
-
 part2()
-
--- 1904 too low
-
---2499 answer is 
-
--- 3138 too high
