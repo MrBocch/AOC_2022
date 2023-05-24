@@ -9,11 +9,6 @@ function part1()
         local line = io.read("*line")
         if line == nil then break end
 
-        --[[
-        local n1 = {string.sub(line, 1,1), string.sub(line, 3, 3)}
-        local n2 = {string.sub(line, 5,5), string.sub(line, 8, 8)}
-        print(n2[1]..":"..n2[2])
-        ]]
         local nums = {}
         local i = 1
         for v in string.gmatch( line, "(%d+)") do
@@ -22,10 +17,22 @@ function part1()
         end
 
         for i=1, #nums, 4 do
-            print(nums[i].."-"..nums[i+1], nums[i+2].."-"..nums[i+3])
+            num1 = nums[i]
+            num2 = nums[i+1]
+            num3 = nums[i+2]
+            num4 = nums[i+3]
+
+            if (num1 <= num3 and num2 >= num4) or (num3 <= num1 and num4 >= num2) then
+                contained = contained +1
+                print(num1.."-"..num2.." , "..num3.."-"..num4)
+                continue
+            end
         end
 
     end
+
+    print("Part1: "..contained)
+    --569 too high
 end
 
 part1()
