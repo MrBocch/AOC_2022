@@ -25,7 +25,6 @@ function part1()
             if (num1 <= num3 and num2 >= num4) or (num3 <= num1 and num4 >= num2) then
                 contained = contained +1
                 print(num1.."-"..num2.." , "..num3.."-"..num4)
-                continue
             end
         end
 
