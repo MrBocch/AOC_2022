@@ -55,7 +55,6 @@ function part2()
 
         if end1 >= start2 then
             overlaps = overlaps + 1
-            print(start1.."-"..end1..","..start2.."-"..end2)
         elseif end2 >= start1 then
             overlaps = overlaps + 1
         end
@@ -69,3 +68,23 @@ end
 
 part1()
 part2()
+
+print("\n\n")
+
+nums = {2,4,6,8,2,3,4,5,5,7,7,9,2,8,3,7,6,6,4,6,2,6,4,8}
+ol = 0
+for i=1, #nums, 4 do
+    start1 = nums[i]
+    end1= nums[i+1]
+
+    start2 = nums[i+2]
+    end2= nums[i+3]
+
+    if end1 >= start2 then
+        ol = ol +1
+    elseif end2 >= start1 then
+        ol = ol + 1
+    end
+    print(i)
+end
+print(ol)
