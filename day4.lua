@@ -53,38 +53,18 @@ function part2()
         start2 = tonumber(start2)
         end2= tonumber(end2)
 
-        if end1 >= start2 then
-            overlaps = overlaps + 1
-        elseif end2 >= start1 then
+        -- I dont understand why this works.
+        -- I been hitting a wall a day4. Whats wrong?
+        if start1 <= end2 and start2 <= end1 then
             overlaps = overlaps + 1
         end
-
+        --Would of not figured it out if not for 
+        -- https://github.com/cideM/aoc2022/blob/main/d4/main.lua
     end
 
 
     print("Part2: "..overlaps)
-    --1000 to high
 end
 
 part1()
 part2()
-
-print("\n\n")
-
-nums = {2,4,6,8,2,3,4,5,5,7,7,9,2,8,3,7,6,6,4,6,2,6,4,8}
-ol = 0
-for i=1, #nums, 4 do
-    start1 = nums[i]
-    end1= nums[i+1]
-
-    start2 = nums[i+2]
-    end2= nums[i+3]
-
-    if end1 >= start2 then
-        ol = ol +1
-    elseif end2 >= start1 then
-        ol = ol + 1
-    end
-    print(i)
-end
-print(ol)
