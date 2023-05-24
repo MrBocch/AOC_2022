@@ -11,8 +11,8 @@ function part1()
         if line == nil then break end
 
         -- I did not knew about pattern matching functions
-        start1, end1, start2, end2 = string.match( line, "(%d+)-(%d+),(%d+)-(%d+)") 
-
+        start1, end1, start2, end2 = string.match(line, "(%d+)-(%d+),(%d+)-(%d+)")
+        
         start1 = tonumber(start1)
         end1 = tonumber(end1)
 
