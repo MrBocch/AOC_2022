@@ -5,39 +5,29 @@ function part1()
 
     local contained = 0
     local nums = {}
-    local i = 1
 
     while true do
         local line = io.read("*line")
         if line == nil then break end
 
-        for v in string.gmatch( line, "(%d+)") do
-            nums[i] = v
-            i = i + 1
+        -- I did not knew about pattern matching functions
+        start1, end1, start2, end2 = string.match( line, "(%d+)-(%d+),(%d+)-(%d+)") 
+
+        start1 = tonumber(start1)
+        end1 = tonumber(end1)
+
+        start2 = tonumber(start2)
+        end2= tonumber(end2)
+
+        if (start1 <= start2) and (end1 >= end2) then
+            contained = contained + 1
+
+        elseif (start2 <= start1) and (end2 >= end1) then
+            contained = contained + 1
         end
 
     end
 
-    for i=1, #nums, 4 do
-        local a1 = nums[i]
-        local a2 = nums[i+1]
-
-        local b1 = nums[i+2]
-        local b2 = nums[i+3]
-
-        --[[
-            I cant understand why does this not work?
-        if start1 >= start2 and end1 <= end2 then
-            contained = contained + 1
-
-        elseif start1 <= start2 and end1 >= end2 then
-            contained = contained + 1
-        end
-        ]]
-        if (a1 <= b1 and a2 >= b2) or (b1 <= a1 and b2 >= a2) then
-            contained = contained+ 1
-        end
-    end
 
     print("Lua Part1: "..contained)
     --Correct 542 
