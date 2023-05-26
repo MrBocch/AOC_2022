@@ -99,10 +99,3 @@ end
 
 part1()
 part2()
-
-
---matrix = {{1,2,3, 10}, {4,5,6, 10, 50}, {7,8,9, 10,10,90}}
---print(matrix[1][#matrix[1]])
---print(matrix[3][#matrix[3]])
-
-
