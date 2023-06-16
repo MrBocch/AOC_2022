@@ -42,7 +42,7 @@ function part2()
             if set[string.sub(string, k,k)] == nil then
                 set[string.sub(string, k,k)] = true
                 setSize = setSize + 1
-            end
+            else break end 
         end
     
         if setSize == 14 then
